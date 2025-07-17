@@ -13,7 +13,7 @@ This project is a flexible, extensible framework for running data transformation
 ## Requirements
 
 ### Python Version
-- Python 37
+- Python 3.12
 
 ### Dependencies
 ```
