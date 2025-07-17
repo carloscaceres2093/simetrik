@@ -57,18 +57,13 @@ def load_parser_from_s3(parser_file_name, class_name, kwargs):
         class: The parser class
     """
     try:
-        # Download the parser file from S3
         download_from_s3("base_parser",kwargs)
         local_file_path = download_from_s3(parser_file_name, kwargs)
-        # Load the module from the local file
         module_name = f"s3_parser_{os.path.basename(local_file_path).replace('.py', '')}"
-        
-        # Load the module
         spec = importlib.util.spec_from_file_location(module_name, local_file_path)
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         
-        # Get the parser class
         if hasattr(module, class_name):
             parser_class = getattr(module, class_name)
             log(f"S3 parser {parser_file_name} loaded")
