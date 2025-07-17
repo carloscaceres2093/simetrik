@@ -1,0 +1,50 @@
+version: 1
+disable_existing_loggers: true
+formatters:
+  brief:
+    format: '%(message)s'
+  simple:
+    format: '%(levelname)s - %(asctime)s - %(name)s - %(funcName)s -: %(message)s'
+    datefmt: '%Y-%m-%d %H:%M:%S'
+  console:
+    format: '%(name)s - %(levelname)s - : %(message)s'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: console
+    stream: ext://sys.stdout
+  file:
+    class: logging.FileHandler
+    level: INFO
+    formatter: simple
+    filename: logs.log
+loggers:
+  simpleExample:
+    level: DEBUG
+    handlers: [console]
+    propagate: no
+  # Filter out noisy AWS and S3 logs
+  s3transfer:
+    level: WARNING
+    handlers: []
+    propagate: no
+  boto3:
+    level: WARNING
+    handlers: []
+    propagate: no
+  botocore:
+    level: WARNING
+    handlers: []
+    propagate: no
+  urllib3:
+    level: WARNING
+    handlers: []
+    propagate: no
+  s3transfer.tasks:
+    level: ERROR
+    handlers: []
+    propagate: no
+root:
+  level: DEBUG
+  handlers: [console,file]

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+    <record>
+        <id>1</id>
+        <name>John Doe</name>
+        <email>john.doe@example.com</email>
+        <age>30</age>
+        <city>New York</city>
+        <department>Engineering</department>
+    </record>
+    <record>
+        <id>2</id>
+        <name>Jane Smith</name>
+        <email>jane.smith@example.com</email>
+        <age>28</age>
+        <city>Los Angeles</city>
+        <department>Marketing</department>
+    </record>
+    <record>
+        <id>3</id>
+        <name>Bob Johnson</name>
+        <email>bob.johnson@example.com</email>
+        <age>35</age>
+        <city>Chicago</city>
+        <department>Sales</department>
+    </record>
+    <record>
+        <id>4</id>
+        <name>Alice Brown</name>
+        <email>alice.brown@example.com</email>
+        <age>32</age>
+        <city>Houston</city>
+        <department>HR</department>
+    </record>
+    <record>
+        <id>5</id>
+        <name>Charlie Wilson</name>
+        <email>charlie.wilson@example.com</email>
+        <age>29</age>
+        <city>Phoenix</city>
+        <department>Finance</department>
+    </record>
+</data> 
